@@ -3,10 +3,10 @@
 #include <iostream>
 
 #include "config.h"
-#include "lib.h"
-#include "test_detect_face.h"
-#include "detect_symbols.h"
-#include "detect_size.h"
+#include "lib/lib.h"
+#include "core/detect_face.h"
+#include "core/detect_symbols.h"
+#include "core/detect_size.h"
 
 
 using namespace std;

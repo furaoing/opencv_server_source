@@ -8,7 +8,8 @@
 #include <opencv2/imgcodecs.hpp>
 #include <opencv2/imgcodecs/imgcodecs_c.h>
 #include <time.h>
-#include "roy_system.h"
+
+#include "lib/roy_system.h"
 
 using namespace std;
 using namespace cv;
