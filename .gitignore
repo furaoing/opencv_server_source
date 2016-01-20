@@ -25,7 +25,7 @@ $RECYCLE.BIN/
 
 # IDE compliation output
 out/
-target/Debug
+target/Debug/
 Debug/
 debug/
 *.class
