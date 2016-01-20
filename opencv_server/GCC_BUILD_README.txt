@@ -1,3 +1,5 @@
+GCC Build Instruction (if needed):
+
 Prerequisites:
     boost headers placed in /usr/includes
     boost .so library placed in /usr/lib (optional)

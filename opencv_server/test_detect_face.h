@@ -39,4 +39,7 @@ int detect_face(Mat img) {
     cout << "Detect Face Count: " << objs.size() << endl;
     return (int) objs.size();
     // return amount of face rect detected
+    /*
+     *  TODO: Handle Failure of Method --- cascade.detectMultiScale(img, objs, scale_factor, min_neighbors);
+     */
 }

@@ -11,16 +11,32 @@
 
 using namespace cv;
 
-enum IMG { SHRESHOLD = 300*300};
+enum IMG { SHRESHOLD = 150*150, R_ASPECT_RATIO = 4, R_MIN_SHORT = 40};
 
 int detect_size(Mat img) {
 
     int return_code = 0;
     IMG img_shreshold = SHRESHOLD;
+    IMG img_aspect_ratio = R_ASPECT_RATIO;
+    IMG img_min_short = R_MIN_SHORT;
     int img_resolution = img.rows * img.cols;
-    if (img_resolution > img_shreshold) {
+    int longer = 0;
+    int shorter = 0;
+    int as_ratio = 0;
+
+    if(img.rows > img.cols){
+        longer = img.rows;
+        shorter = img.cols;
+        as_ratio = longer/(shorter+1);
+    }
+    else{
+        longer = img.cols;
+        shorter = img.rows;
+        as_ratio = longer/(shorter+1);
+    }
+
+    if ((img_resolution > img_shreshold)&&(as_ratio < img_aspect_ratio)&&(shorter > img_min_short)) {
         return_code = 0;
-        // return amount of face rect detected
     }
     else
     {
@@ -30,5 +46,11 @@ int detect_size(Mat img) {
     std::cout << "cols:" << img.cols << std::endl;
     std::cout << "Size OK Code:" << return_code << std::endl;
 
+    // TODO: Handle Exceptions Within This Function
     return return_code;
+    /*
+     * Return Code Spec:
+     *    0 => Image Size OK
+     *    1 => Image Size NOT OK
+     */
 }

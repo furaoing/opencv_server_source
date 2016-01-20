@@ -31,10 +31,12 @@ int detect_symbols(Mat img) {
     // Wrap image data
     Image image(width, height, "Y800", raw, width * height);
 
-    // Scan the image for barcodes
-    //int n = scanner.scan(image);
+    // Scan the image for barcodes, etc
     int result = scanner.scan(image);
+    // TODO: Handle Exceptions of scanner.scan();
+
     std::cout << "Symbols Result is:" << result << std::endl;
+
     /*
     // Extract results
     int counter = 0;

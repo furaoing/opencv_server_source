@@ -25,6 +25,11 @@ img_read_struct img_read(String img_pth) {
     }
 
     return img_rs;
+    /*
+     * Return Code Spec:
+     *    0 => Img Read Successful
+     *    -1 => Img Read Failed
+     */
 }
 
 namespace roy_opencv {

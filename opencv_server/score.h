@@ -4,7 +4,7 @@
 
 #include "config.h"
 #include "lib.h"
-#include "detect_face.h"
+#include "test_detect_face.h"
 #include "detect_symbols.h"
 #include "detect_size.h"
 
@@ -62,6 +62,17 @@ string score(String img_pth) {
         std::cout << "Image Reading Failed" << std::endl;
 
         json_msg = roy_opencv::generate_msg(CODE_REF::SCORE_READFAILED , read_result);
+        // if read failed, use 0 as the default score
     }
+    else{
+        std::cout << "Program Bug, Return Code Out Of Range" << std::endl;
+        // TODO: Handle Unspecified Return Code
+    }
+
     return json_msg;
+    /*
+     * Return Code in json_msg Spec:
+     *     0 => Img Scoring Process Succeed
+     *     -1 => Img Reading Failed
+     */
 }
