@@ -15,16 +15,12 @@ using namespace std;
 using namespace cv;
 
 int detect_face(Mat img) {
-    String self_pth = get_selfpath();
-    String data_relpth = "data/lbpcascade_frontalface.xml";
 
-    int exe_str_len = 8;
-    String self_dir_pth = self_pth.substr(0, self_pth.length()-(exe_str_len+1));
-    // exe_str_len + 1 ===> Take "/" in the file path into account, /abc/t.exe -> /abc  (no trailing /)
+    String data_relpth = "data/lbpcascade_frontalface.xml";
+    String abs_pth = roy_c::get_abs_pth(data_relpth);
 
     // String face_cascade_name = "/home/furaoing/roy_tensorflow_cv/opencv_test_ws/opencv_test/cpp/data/lbpcascades/lbpcascade_frontalface.xml";
-    std::cout << "Self path:"+ self_dir_pth << std::endl;
-    String face_cascade_name = self_dir_pth + "/" + data_relpth;
+    String face_cascade_name = abs_pth;
     CascadeClassifier cascade;
     if( !cascade.load( face_cascade_name ) ){ std::cout << "Cascade_name file:"+face_cascade_name << std::endl;};
     // cascade.load will only load abspath file

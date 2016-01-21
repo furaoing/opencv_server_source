@@ -8,7 +8,8 @@ find_package( OpenCV REQUIRED )
 find_package (ZBar0)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
-SET(opencv_server_source_BINARY_DIR ${opencv_server_source_SOURCE_DIR}/target)
+set(opencv_server_source_BINARY_DIR ${opencv_server_source_SOURCE_DIR}/target)
+# set binary dir, usage unknown
 
 include_directories( ${opencv_server_source_SOURCE_DIR} ${OpenCV_INCLUDE_DIRS} )
 
