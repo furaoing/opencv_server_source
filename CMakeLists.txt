@@ -11,7 +11,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 set(opencv_server_source_BINARY_DIR ${opencv_server_source_SOURCE_DIR}/target)
 # set binary dir, usage unknown
 
-include_directories( ${opencv_server_source_SOURCE_DIR} ${OpenCV_INCLUDE_DIRS} )
+include_directories( ${PROJECT_SOURCE_DIR} ${OpenCV_INCLUDE_DIRS} )
 
 set(SOURCE_FILES
         main.cpp

@@ -8,10 +8,6 @@
 #include "core/detect_symbols.h"
 #include "core/detect_size.h"
 
-
-using namespace std;
-using namespace cv;
-
 enum CODE_REF { NO_SYMBOL = 0, SIZE_OK = 0, SCORE_READFAILED = 0};
 
 float _score(int rect_count, int symbol_code, int size_code)
@@ -34,7 +30,7 @@ float _score(int rect_count, int symbol_code, int size_code)
     return (float) score;
 }
 
-string score(String img_pth) {
+std::string score(cv::String img_pth) {
 
     int rect_count, symbol_code, size_code;
     std::string json_msg;

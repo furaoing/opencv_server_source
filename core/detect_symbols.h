@@ -33,34 +33,6 @@ int detect_symbols(cv::Mat img) {
 
     std::cout << "Symbols Result is:" << result << std::endl;
 
-    /*
-    // Extract results
-    int counter = 0;
-    for (Image::SymbolIterator symbol = image.symbol_begin(); symbol != image.symbol_end(); ++symbol) {
-        time_t now;
-        tm *current;
-        now = time(0);
-        current = localtime(&now);
-
-        // do something useful with results
-        cout    << "[" << current->tm_hour << ":" << current->tm_min << ":" << setw(2) << setfill('0') << current->tm_sec << "] " << counter << " "
-                << "decoded " << symbol->get_type_name()
-                << " symbol \"" << symbol->get_data() << '"' << endl;
-
-        //cout << "Location: (" << symbol->get_location_x(0) << "," << symbol->get_location_y(0) << ")" << endl;
-        //cout << "Size: " << symbol->get_location_size() << endl;
-
-
-        // Get points
-        /*for (Symbol::PointIterator point = symbol.point_begin(); point != symbol.point_end(); ++point) {
-            cout << point << endl;
-        } */
-
-/*
-    counter++;
-}
-*/
-
     // clean up
     image.set_data(NULL, 0);
 
