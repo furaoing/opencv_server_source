@@ -6,9 +6,8 @@
 #include "config.h"
 #include "score.h"
 
-using boost::asio::ip::tcp;
-
 int main() {
+    using boost::asio::ip::tcp;
     try
     {
         boost::system::error_code error;

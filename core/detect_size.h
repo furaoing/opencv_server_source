@@ -9,11 +9,10 @@
 #include <opencv2/imgcodecs/imgcodecs_c.h>
 #include <time.h>
 
-using namespace cv;
 
 enum IMG { SHRESHOLD = 150*150, R_ASPECT_RATIO = 4, R_MIN_SHORT = 40};
 
-int detect_size(Mat img) {
+int detect_size(cv::Mat img) {
 
     int return_code = 0;
     IMG img_shreshold = SHRESHOLD;

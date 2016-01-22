@@ -6,16 +6,12 @@
 #include <iomanip>
 
 
-using namespace std;
-using namespace cv;
-using namespace zbar;
-
-int detect_symbols(Mat img) {
+int detect_symbols(cv::Mat img) {
     // Create a zbar reader
-    ImageScanner scanner;
+    zbar::ImageScanner scanner;
 
     // Configure the reader
-    scanner.set_config(ZBAR_NONE, ZBAR_CFG_ENABLE, 1);
+    scanner.set_config(zbar::ZBAR_NONE, zbar::ZBAR_CFG_ENABLE, 1);
 
 
     // Capture an OpenCV frame
@@ -29,7 +25,7 @@ int detect_symbols(Mat img) {
     uchar *raw = (uchar *) (frame_grayscale.data);
 
     // Wrap image data
-    Image image(width, height, "Y800", raw, width * height);
+    zbar::Image image(width, height, "Y800", raw, width * height);
 
     // Scan the image for barcodes, etc
     int result = scanner.scan(image);

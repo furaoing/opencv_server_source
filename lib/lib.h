@@ -4,15 +4,13 @@
 #include <opencv2/imgcodecs.hpp>
 #include <opencv2/imgcodecs/imgcodecs_c.h>
 
-using namespace std;
-using namespace cv;
 
 struct img_read_struct {
-    Mat img;
+    cv::Mat img;
     int return_code;
 };
 
-img_read_struct img_read(String img_pth) {
+img_read_struct img_read(cv::String img_pth) {
     img_read_struct img_rs;
     img_rs.img = imread(img_pth, CV_LOAD_IMAGE_GRAYSCALE);
 

@@ -42,7 +42,7 @@ string score(String img_pth) {
     img_read_struct img_rs = img_read(img_pth);
 
     int read_result = img_rs.return_code;
-    Mat img = img_rs.img;
+    cv::Mat img = img_rs.img;
     // read image into a Mat object
     // read_result is a int indicting whether file read operation is succeed or not
 
