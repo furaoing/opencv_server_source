@@ -1,3 +1,6 @@
+#ifndef OPENCV_SERVER_SOURCE_LIB_H
+#define OPENCV_SERVER_SOURCE_LIB_H
+
 #include <opencv2/core/core.hpp>
 #include <iostream>
 #include <string>
@@ -49,3 +52,6 @@ namespace roy_opencv {
         return json_msg;
     }
 }
+
+
+#endif //OPENCV_SERVER_SOURCE_LIB_HANDLER_H

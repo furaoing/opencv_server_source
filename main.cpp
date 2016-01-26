@@ -1,13 +1,15 @@
 #include <iostream>
 #include <ctime>
 #include <boost/asio.hpp>
-#include <boost/array.hpp>
 
 #include "config.h"
 #include "score.h"
 
+using namespace opencv_server;
+
 int main() {
     using boost::asio::ip::tcp;
+
     try
     {
         boost::system::error_code error;
@@ -21,6 +23,10 @@ int main() {
         std::cout << "Serving HTTP on port: " + port_str << std::endl;
 
         while(1) {
+            symbol_handler symbol_detector = symbol_handler();
+            shape_handler shape_examiner = shape_handler();
+            face_handler face_detector = face_handler();
+            // Create three handlers to process image
             char buffer[BUFF_SIZE];
             // buffer is a string representing the path of image path
 
@@ -47,7 +53,10 @@ int main() {
                 std::cout << "Image Path: " << buffer << "##" << std::endl;
                 std::cout << "Image Processing Started" << std::endl;
 
-                boost::asio::write(socket, boost::asio::buffer(score(buffer)), error);
+                boost::asio::write(socket, boost::asio::buffer(score(buffer,
+                                                                     &symbol_detector,
+                                                                     &shape_examiner,
+                                                                     &face_detector)), error);
             }
         }
     }

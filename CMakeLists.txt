@@ -17,9 +17,9 @@ set(SOURCE_FILES
         main.cpp
         config.h
         score.h
-        core/detect_face.h
-        core/detect_symbols.h
-        core/detect_size.h
+        core/face_handler.h
+        core/symbol_handler.h
+        core/shape_handler.h
         lib/lib.h
         lib/roy_system.h
         )

@@ -1,3 +1,7 @@
+#ifndef OPENCV_SERVER_SOURCE_ROY_SYSTEM_H
+#define OPENCV_SERVER_SOURCE_ROY_SYSTEM_H
+
+
 #include <unistd.h>
 #include <iostream>
 #include <sys/types.h>
@@ -68,3 +72,4 @@ namespace roy_c {
 }
 
 
+#endif //OPENCV_SERVER_SOURCE_ROY_SYSTEM_H
