@@ -24,5 +24,5 @@ set(SOURCE_FILES
         lib/roy_system.h
         )
 
-add_executable(opencv.out.1.0.1 ${SOURCE_FILES})
-target_link_libraries( opencv.out.1.0.1 ${OpenCV_LIBS} ${ZBAR_LIBRARIES} -lboost_system)
+add_executable(opencv.out.1.0.2 ${SOURCE_FILES})
+target_link_libraries( opencv.out.1.0.2 ${OpenCV_LIBS} ${ZBAR_LIBRARIES} -lboost_system)
