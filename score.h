@@ -22,7 +22,8 @@ namespace opencv_server {
         }
         else {
             filter = 0;
-            cv_score = rect_count;
+            cv_score = 1 + rect_count;
+            // set 1 as base to enable score punishment in python http server (with tensorflow handler enabled there)
         }
 
         score = filter + cv_score;
